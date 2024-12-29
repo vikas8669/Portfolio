@@ -4,8 +4,37 @@ import instagram from "../assets/instagram.png";
 import linkedin from "../assets/linkedin.png";
 import Lottie from "lottie-react";
 import contact from "../assets/Contact.json";
+import emailjs from '@emailjs/browser';
+import  { useRef } from 'react';
+import { toast } from "react-toastify";
+
+
+
 
 const Contact = () => {
+
+  const form = useRef();
+  const sendEmail = (e) => {
+    e.preventDefault();
+    
+    
+
+    emailjs
+      .sendForm('service_vcxjqk6', 'template_t6pwuzs', form.current, {
+        publicKey: 'X-bRY407MQ_aHmy33',
+      })
+      .then(
+        () => {
+          console.log('SUCCESS!');
+          toast.success(' Email Send succssesfully!')
+          form.current.reset();
+        },
+        (error) => {
+          console.log('FAILED...', error.text);
+          toast.error('something Went wrong! ')
+        },
+      );
+  };
   return (
     <section
       id="contact"
@@ -46,21 +75,20 @@ const Contact = () => {
               className="w-[350px] mx-auto lg:w-[500px]"
             />
           </div>
-          <form className="w-full md:w-1/2 bg-gray-100 rounded-lg border border-red-300 shadow-lg shadow-red-500 p-10">
-            <h1 className="text-gray-900 text-4xl font-bold mb-7">
-              Contact Me
-            </h1>
+          <form ref={form} onSubmit={sendEmail} className="w-full md:w-1/2 bg-gray-100 rounded-lg border border-red-300 shadow-lg shadow-red-500 p-10">
+            <h1 className="text-gray-900 text-4xl font-bold mb-7"> Contact Me</h1>
             <div className="mb-4">
               <label
                 htmlFor="name"
                 className="block text-sm font-medium text-gray-700"
               >
-                Name
+                   Name
               </label>
               <input
                 type="text"
                 id="name"
                 placeholder="Full Name"
+                name="from_name"
                 className="mt-1 p-2 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
               />
             </div>
@@ -75,6 +103,7 @@ const Contact = () => {
                 type="email"
                 id="email"
                 placeholder="Email"
+                name="from_email"
                 className="mt-1 p-2 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
               />
             </div>
@@ -88,10 +117,11 @@ const Contact = () => {
               <textarea
                 id="message"
                 placeholder="Enter Your Message"
+                name="message"
                 className="mt-1 p-2 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
               />
             </div>
-            <button className="bg-red-500 text-white px-3 py-2 rounded-lg">
+            <button onSubmit={sendEmail} className="bg-red-500 text-white px-3 py-2 rounded-lg">
               Send Message
             </button>
           </form>

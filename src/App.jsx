@@ -1,14 +1,12 @@
 import React from 'react'
 import Navbar from './components/Navbar'
-import Hero from './components/Hero'
 import ParticleBackground from './components/Particle'
 import About from './components/About'
 import Projects from './components/Projects'
-
-import Contact from './components/Contact'
 import Footer from './components/Footer'
 import Eduction from './components/Eduction'
-
+import Contact from './Components/Contact'
+import Hero from "./Components/Hero"
 
 
 const App = () => {
@@ -16,7 +14,7 @@ const App = () => {
     <>
       <ParticleBackground />
       <Navbar />
-      <Hero />
+      <Hero/>
       <About/>
       <Projects/>
       <Eduction />
