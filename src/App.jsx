@@ -1,12 +1,12 @@
 import React from 'react'
-import Navbar from './components/Navbar'
-import ParticleBackground from './components/Particle'
-import About from './components/About'
-import Projects from './components/Projects'
-import Footer from './components/Footer'
-import Eduction from './components/Eduction'
+import ParticleBackground from './Components/Particle'
+import About from './Components/About'
+import Projects from './Components/Projects'
+import Footer from './Components/Footer'
+import Eduction from './Components/Eduction'
 import Contact from './Components/Contact'
 import Hero from "./Components/Hero"
+import Navbar from "./Components/Navbar"
 
 
 const App = () => {
