@@ -16,7 +16,7 @@ const Hero = () => {
                <h1 className='lg:text-7xl text-4xl font-bold lg:leading-snug'>Hi There, <br />I'm Vikas kumar <span className='text-red-500'></span></h1>
                <p className='md:text-2xl text-xl mb-4'>Web Developer </p>
                <p className='mb-4'>I'm a passionate web developer with expertise in React, and modern web technologies. I love creating beautiful and functional website that solve real world problems.</p>
-               <button className='bg-black text-white px-3 py-2 w-max rounded-md'><a href="https://drive.google.com/file/d/1ArdN3_B0a6aUNEhF7KQkBNuyL3lFY2Fu/view?usp=drive_link" download target='_blank'>Download CV</a></button>
+               <button className='bg-black text-white px-3 py-2 w-max rounded-md'><a href="https://drive.google.com/file/d/1eAIT9Ie7gZopgMmA-H0BvxEoQvvxvwlp/view?usp=drive_link" download target='_blank'>Download CV</a></button>
             </div>
             <div className='md:w-1/2 relative flex justify-center items-end'>
                  <img src={hero} alt="" className='lg:h-[70vh] h-96' />
